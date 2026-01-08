@@ -1,0 +1,52 @@
+sort1 uses: Bubble Sort
+
+How do you know?: It's running time is characteristic of Bubble sort, needing only one pass Ω(n) of an already sorted list.
+
+sort2 uses: Merge Sort
+
+How do you know?: Presents the best time compared to the other two, it's time increases with larger lists but not as much as the others O(n log n).
+
+sort3 uses: Selection Sort
+
+How do you know?: The list being already sorted, randomized or reversed doesn't impact it's running time. O(n²) and Ω(n²)
+
+----------------------------
+
+sort 1
+random5000 - 0.067
+reversed5000 - 0.064
+sorted 500 - 0.038
+
+random10000 - 0.181
+reversed10000 - 0.234
+sorted10000 - 0.039
+
+random50000 - 5.824
+reversed50000 - 5.145
+sorted50000 - 0.739
+
+sort 2
+random5000 - 0.025
+reversed5000 - 0.024
+sorted 500 - 0.019
+
+random10000 - 0.037
+reversed10000 - 0.042
+sorted10000- 0.038
+
+random50000 - 0.639
+reversed50000 - 0.622
+sorted50000 - 0.637
+
+sort 3
+random5000 - 0.048
+reversed5000 - 0.041
+sorted 500 - 0.040
+
+random10000 - 0.107
+reversed10000 - 0.120
+sorted10000 - 0.110
+
+random50000 - 2.482
+reversed50000 - 2.599
+sorted50000 - 2.460

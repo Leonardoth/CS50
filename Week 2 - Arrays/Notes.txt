@@ -1,0 +1,92 @@
+What "compiling" actually is:
+    Preprocessing - Anything that starts with #, is a 'pre-process directive'
+    something that is in another file and we want on this one. Basically it 'copies and paste' the library at the top of your code.
+
+    in a simples get input + print, after preprocessing:
+        #include <cs50.h>
+        #include <stdio.h>
+        is replaced by:
+        string get_string(string prompt);
+        int printf(string format, ...);
+
+    Compiling - Gets translated from c to assembly code
+    Assembling - Converts assembly code to binary
+    Linking - Adds the files together (i.e: hello.c, cs50.c, stdio.c)
+
+Decompile - The act of trying to reverse the compiling
+
+Debugging - Act of fingind errors and fixing them in your code.
+    Common way is to print to debug, but a proper way is to use a debugging tool.
+    For this course is debug50.
+        When debugging is possible to see variables with strange values before execution ou assignment of value,
+        that just means that is a 'garbage value', that variable may be using a space in the memory that was being
+        used by another program and that value was used.
+
+
+Arrays - A list of values of the same type. "Sequence of values contiguos in memory."
+
+                ↱ size of array (3 elements)
+    int scores[3];
+    |     ↳ name of array
+    type of valeus
+
+scores[0] = 72; -> assign position and value inside the array
+
+Const -> make a constant so nobody can change the variable later
+
+    const int N = 3;
+
+    It's common to name constant with CAPITAL LETTERS so it jumps to the reader. Similar to #define.
+    It is a good idea to put your constants OUTSIDE the function so if you want to change it somewhere, its obvious
+    where to change it.
+
+
+Arrays as input in function -> In C, passing an array as input to a function, you also have to pass it's length in
+another argument.
+
+    e.g: float average (int length, int array[])
+
+    array is in [] but it's length comes in another argument.
+
+What if we try to access an array index that doesn't exist?
+
+    In a string (an array of chars), the 'last' element is \0 (NUL), if our string has 3 characters, the string[3] (4th element)
+    would be 0. It's how the machine understands that the string stops there.
+    If we try to go further, we start to see 'garbage values' that could belong to the same program or be residue of
+    other programs in the memory. The 'double quotes' imply the \0. That's why we do not use double quotes for a single
+    char.
+
+Declaring two variables at once in a loop
+
+        for (int i = 0; i < strlen(s); i++)
+
+    This way, everytime we loop, it'll call strlen again, even if the length of the string is not changing.
+
+    A better way to do it would be:
+
+        for (int i = 0, n = strlen(s); i < n; i++)
+
+    This way strlen is called only once and used throughout the loop.
+    As long as the variables are the same type, it can be done this way.
+
+Command Line Arguments
+
+    in the main function we can give it parameters instead of (void)
+
+        int main(int argc, string argv[])
+
+    that means argc (argument count) and argv (argument vector)
+
+    Argv[0] will always be the name of the program.
+    Argv[1] will be the first argument
+
+Status codes
+
+    0 means sucessfull execution
+    Positive numbers means failure/error
+
+See status code of last execution
+
+    we can type in the command line
+        echo $?
+    this will print the status code of the last execution

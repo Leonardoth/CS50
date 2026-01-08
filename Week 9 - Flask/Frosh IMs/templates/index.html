@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<h1> Welcome! Register for Frosh IMs</h1>
+<form action="/register" method="post">
+    <input name="name" placeholder="Name" required type="text">
+    {% for sport in sports %}
+        <input name="sport" type="radio" value="{{sport}}"> {{sport}}
+    {% endfor %}
+    <button type="submit">Register</button>
+
+</form>
+{% endblock %}

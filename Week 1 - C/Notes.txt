@@ -1,0 +1,58 @@
+1.Razão para o #include <stdio.h>?
+    -> stdio.h é uma 'header file', funcionalidade que veio com o sistema/linguagem.
+    Caso esqueça essa header file, você não tem acesso a 'biblioteca'(libraries) de códigos que ja foram escritos para a linguagem por exemplo.
+    NÃO É studio.h, é STANDARD IO, então stdio.h
+
+2.Onde está a documentação de C?
+    https://manual.cs50.io/ -> Lá está um modo simplificado (com direito a pesquisa)
+
+
+3.Quando se refere a um unico character, utiliza-se apenas ' ao invés de " (que é utilizado para string)
+
+4. Prototype of a function
+    Quando você precisa utilizar uma função antes dela ser declarada, você pode colocar a primeira linha dela no inicio do arquivo.
+    ex:
+        void meow(void);
+        função que utilizará a função meow
+        definição da função meow.
+
+5. Why functions start with int?
+    ex:
+        int main (void)
+
+        Significa que o OUTPUT será INT e o input sera VOID
+
+6. Correctness, design, style.
+    Correctness -> The code works.
+    Design -> The code works and is done in a smart way, good performance etc.
+    Style -> The code is easy to read and is good to.
+
+    check50 ->
+    design50 ->
+    style50 ->
+
+
+7. Magic Numbers
+    Não é boa pratica usar o mesmo numero repetidamente no seu codigo, caso um numero vá ser usado mais de uma vez pode ser interessante criar uma variável com ele
+    Se alguém olhar rapidamente seu código, a pessoa vai saber o porquê você escolheu aquele número específico? É óbvio? Se não, provavelmente ele é um numero mágico.
+    O ideal é evitar números sem explicação explicita, ex:
+        Se no nosso código vamos falar sobre baralho, provavelmente usaremos 52 como o limite máximo de cartas, porém é considerado boa prática colocar esse numero numa variável,
+        principalmente pois em outras situações caso esse numero mudasse, mudariamos apenas em um lugar, evitando bugs.
+
+
+
+
+8. Declaration, assignment and initialization of variables
+    Declaração é o ato de declarar uma variável. ex: int row;
+    Assignment é designar um valor a uma variavel. ex: row = 3;
+    Inicializar uma variável é quando se designa um valor na sua declaração. ex: int row = 3;
+
+9. #define
+    Define é um 'preprocessor directive' ou 'macro' para criar constantes simbolicas
+
+    #define NAME REPLACEMENT
+
+    Na hora que o programa é compilado #define substitui todos os NAME com REPLACEMENT.
+    Se #include é similar a copy/paste, #define é similar a find/replace.
+    Não se usa ";" no final da linha de #define
+    É uma convenção usar ALL CAPS para as constantes simbolicas, para diferenciá-las de variáveis.

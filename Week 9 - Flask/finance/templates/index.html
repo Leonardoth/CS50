@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th class="text-start">Symbol</th>
+            <th class="text-end">Shares</th>
+            <th class="text-end">Price</th>
+            <th class="text-end">Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in portfolio %}
+            {% if item.quantity > 0 %}
+                <tr>
+                    <td class="text-start">{{item.symbol}}</td>
+                    <td class="text-end">{{item.quantity}}</td>
+                    <td class="text-end">{{item.price | usd}}</td>
+                    <td class="text-end">{{(item.quantity * item.price) | usd }}</td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+    </tbody>
+    <tfoot>
+        <tr>
+            <td class="text-end border-0 fw-bold" colspan="3">IN STOCKS:</td>
+            <td class="text-end">{{totalInStocks | usd}}</td>
+        </tr>
+        <tr>
+            <td class="text-end border-0 fw-bold" colspan="3">CASH:</td>
+            <td class="text-end">{{ cash | usd}}</td>
+        </tr>
+        <tr>
+            <td class="text-end border-0 fw-bold" colspan="3">TOTAL: </td>
+            <td class="text-end">{{total | usd }}</td>
+        </tr>
+    </tfoot>
+</table>
+{% endblock %}

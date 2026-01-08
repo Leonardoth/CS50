@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block main %}
+    <form action="/quote" method="post">
+        <input name="symbol" autocomplete="off" type="text" placeholder="Symbol" required list="symbols">
+        <datalist id="symbols">
+            <option value="NFLX"> Netflix</option>
+            <option value="MSFT"> Microsoft</option>
+            <option value="AAPL"> Apple</option>
+            <option value="AMZN"> Amazon.com</option>
+            <option value="INTC"> Intel</option>
+            <option value="AMD"> AMD</option>
+            <option value="NVDA"> Nvidia</option>
+            <option value="TSLA"> Tesla</option>
+        </datalist>
+        <button type="submit"> Submit </button>
+    </form>
+    {% if isQuoted %}
+        {% if quoted %}
+            <span>{{quoted.name}}</span>
+            <span>{{quoted.price | usd}}</span>
+            <span>{{quoted.symbol}}</span>
+        {% else %}
+            <span>Symbol not found.</span>
+        {% endif %}
+    {% endif %}
+{% endblock %}
+

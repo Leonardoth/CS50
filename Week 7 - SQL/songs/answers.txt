@@ -1,0 +1,21 @@
+If songs.db contains the top 100 songs of one listener from 2018,
+how would you characterize their audio aura?
+
++-------------+--------------+-------------------+
+| AVG(energy) | AVG(valence) | AVG(danceability) |
++-------------+--------------+-------------------+
+| 0.65906     | 0.484443     | 0.71646           |
++-------------+--------------+-------------------+
+
+energy (65.9%)
+valence (48.4%)
+danceability (71.6%)
+
+Their aura would be a mix of Orange, Bluish and purple where it favors dancing and movement but are not entirely sad.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+Hypothesize about why the way you’ve calculated this aura might not be very representative of the listener.
+What better ways of calculating this aura would you propose?
+
+Averages can be misleading because one value can highly affect others, a better way would be to factor in duration,
+since currently a sad song of 30 seconds would have the same weight as a 5-minute happy one.

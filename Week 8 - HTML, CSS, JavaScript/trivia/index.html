@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script >
+            let answers = {1:"Nose", 2: ["BATS", "BAT"]}
+            // TODO: Add code to check answers to questions
+            document.addEventListener('DOMContentLoaded', function () {
+                let question1 = document.querySelectorAll('.question')[0].querySelectorAll('button');
+                for(let i = 0; i < question1.length; i++){
+                    question1[i].addEventListener('click', function () {checkMultipleChoice(event, 1)});
+                }
+                let question2 = document.querySelectorAll('.question')[1].querySelector('button');
+                question2.addEventListener('click', function () {checkTextAnswer(2)});
+            })
+
+            function checkMultipleChoice(event, questionNumber){
+                let button = event.target;
+                let text = button.innerText;
+                if(text == answers[questionNumber]){
+                    button.classList.add('correct');
+                    document.querySelectorAll('h4')[questionNumber-1].innerText = 'Correct!';
+
+                }else{
+                    button.classList.add('incorrect');
+                    document.querySelectorAll('h4')[questionNumber-1].innerText = 'Incorrect';
+                }
+            }
+
+            function checkTextAnswer(questionNumber){
+                let parent = document.querySelectorAll('.question')[questionNumber-1]
+                let answer = parent.querySelector('input').value;
+                if(answers[questionNumber].includes(answer.toUpperCase())){
+                    parent.querySelector('h4').innerText = 'Correct!';
+                }else{
+                    parent.querySelector('h4').innerText = 'Incorrect';
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section question" >
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                 <h3>The age of a lion can be determined by its...?</h3>
+                 <h4></h4>
+                 <button>Paws</button>
+                 <button>Nose</button>
+                 <button>Fur</button>
+            </div>
+
+            <div class="section question">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>What's the only mammal capable of true flight?</h3>
+                <h4></h4>
+                <input placeholder='answer' type='text'>
+                <button>Confirm</button>
+                <!-- TODO: Add free response question here -->
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+HTML Tags used:
+
+1.  <nav>
+2.  <a>
+3.  <div>
+4.  <h3>, <h5>
+5.  <p>
+6.  <image>
+7.  <select>
+8.  <option>
+9.  <button>
+10. <i>
+11. <br>
+12. <b>
+
+CSS Properties in styles.css:
+
+1. font-size
+2. background-color
+3. color
+4. display
+5. flex-direction
+6. align-items
+7. width
+8. text-align
+9. gap
+10. flex-grow, flex-shrink
+
+
+I've used javascript to create a link and redirect the user to that link, based on the value of a select element on the index html, also in the index.html we used the button decoration from bootstrap.
+We're also gaining from Bootstraps default styles.

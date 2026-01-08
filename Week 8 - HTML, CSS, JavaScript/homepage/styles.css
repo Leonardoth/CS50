@@ -1,0 +1,283 @@
+body{
+    font-size: max(0.8rem, 11px);
+    background-color:indigo;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.section{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    gap: 10px;
+    flex-grow: 1;
+}
+
+.navbar{
+    z-index: 2;
+    position: fixed;
+    background-color: indigo;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start ;
+    width: 100%;
+}
+
+.link{
+    padding: 10px;
+    color: white;
+    width: fit-content;
+    max-width: fit-content;
+}
+
+.link.active {
+    color: gold;
+    text-decoration: none;
+}
+
+
+.first{
+    padding-top: 7rem;
+}
+
+.section:last-of-type{
+    padding-bottom: 20rem;
+}
+
+
+/* Index */
+
+.bio image{
+    width: 100rem;
+    height: 100rem;
+}
+
+.welcome{
+    align-self: center;
+    width: 90%;
+}
+
+.destination{
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+#destination{
+    background: none;
+    color: white;
+    border-radius: 10px 10px 0px 0px;
+    text-align: center;
+    align-items: stretch;
+}
+
+#destination option{
+    color: black;
+}
+#destination, #redirect{
+    font-size: max(1.2rem, 16px);
+    padding: 0.5rem;
+}
+
+#redirect{
+    font-weight: bold;
+
+    border-radius: 0px 0px 10px 10px;
+}
+
+/* Hobbies */
+.cards{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-inline: 20px;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.card-img-overlay{
+    display: flex;
+    padding-left: 0px;
+    padding-top: 10px;
+}
+
+.card-title{
+    align-self: flex-end;
+    padding: 10px;
+    background: rgba(255,193,7,0.8);
+    color: black;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.card-text{
+    color: white;
+    align-self: center;
+}
+
+
+/* Projects */
+.projects{
+    padding-inline: 20px;
+}
+.project{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 20px;
+    width: 100%;
+}
+.project + .project {
+    margin-top: 5rem;
+}
+
+.project_image{
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid rgba(255,193,7, 1);
+}
+
+.project_link{
+    font-size: 2rem;
+    font-weight:bold;
+    text-decoration: none;
+}
+
+.project_text a {
+    color: rgba(255,193,7,1);
+}
+
+/* Country */
+.section.country{
+    align-items: center;
+    padding-inline: 20px;
+}
+.country + .country{
+    margin-top: 5rem;
+}
+.country_image{
+    padding: 20px;
+    width: 300px;
+}
+
+@media (min-width: 600px){
+
+    body{
+        font-size: max(1rem, 20px);
+        padding-inline: 20px;
+    }
+    .navbar{
+        border-bottom: 2px solid rgba(255,193,7,1);
+    }
+
+    .section:last-of-type{
+        padding-bottom: 100px;
+    }
+    /* Index */
+    .section{
+        gap: 10px;
+    }
+
+    .destination{
+        padding-top: 50px;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        gap:0px !important;
+        border-radius: 10px 0px 0px 10px;
+    }
+
+    #destination{
+        background: none;
+        color: white;
+        border-radius: 10px 0px 0px 10px;
+        text-align: center;
+        align-items: stretch;
+    }
+
+    #destination option{
+        color: black;
+    }
+    #destination, #redirect{
+        padding: 0.5rem;
+    }
+    #redirect{
+        font-weight: bold;
+        border-radius: 0px 10px 10px 0px;
+    }
+
+    /* Hobbies */
+    .cards{
+        flex-direction: row;
+        flex-shrink: 1;
+    }
+    .card{
+        width: 300px;
+        height: 150px;
+    }
+    .card-img{
+        object-fit: cover;
+        width: 300px;
+        height: 150px;
+    }
+    .card-img-overlay{
+        padding: 0px;
+        width: 100%;
+    }
+
+    .card:hover > .card-img-overlay > .card-title{
+        background: rgba(255,193,7,1);
+    }
+
+    /* Projects */
+    .projects{
+        padding-top: 100px;
+    }
+
+    /* Country */
+    .section.country{
+        display: grid;
+        grid-template-areas:'image .'
+        'image title'
+        'image text1'
+        'image text2'
+        'image .';
+        align-self: flex-start;
+        align-items: center;
+        justify-content: center;
+        padding-inline: 20px;
+    }
+    .country + .country{
+        margin-top: 5rem;
+    }
+    .country > h5{
+        grid-area: title;
+        justify-self: flex-start;
+    }
+    .country_image{
+        padding: 20px;
+        width: 500px;
+        grid-area: image;
+    }
+
+    .country_description{
+        text-align: left;
+        justify-self: flex-start;
+
+    }
+    .country_description:first-of-type{
+        grid-area: text1;
+    }
+
+    .country_description:NOT(.country_description:first-of-type){
+        grid-area: text2;
+    }
+}
